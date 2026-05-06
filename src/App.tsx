@@ -11,13 +11,13 @@ const supabase = createClient(
 );
 
 function App() {
-  const [tab, setTab] = useState('cal'); // cal, song, add
-  const [events, setEvents] = useState([]);
-  const [songs, setSongs] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [tab, setTab] = useState<any>('cal'); // cal, song, add
+  const [events, setEvents] = useState<any>([]);
+  const [songs, setSongs] = useState<any>([]);
+  const [loading, setLoading] = useState<any>(false);
 
   // 예약 폼 상태
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<any>({
     title: '',
     unit: '보컬',
     date: '',
@@ -41,13 +41,13 @@ function App() {
     setSongs(songData || []);
   };
 
-  const getUnitColor = (unit) => {
-    const colors = { '드럼': '#ef4444', '보컬': '#f59e0b', '기타': '#10b981', '베이스': '#3b82f6', '키보드': '#8b5cf6' };
+  const getUnitColor = (unit:any) => {
+    const colors: any = { '드럼': '#ef4444', '보컬': '#f59e0b', '기타': '#10b981', '베이스': '#3b82f6', '키보드': '#8b5cf6' };
     return colors[unit] || '#6366f1';
   };
 
   // 예약 저장 함수
-  const handleAddReservation = async (e) => {
+  const handleAddReservation = async (e:any) => {
     e.preventDefault();
     setLoading(true);
 
@@ -74,7 +74,7 @@ function App() {
     setLoading(false);
   };
 
-  const groupedSongs = songs.reduce((acc, song) => {
+  const groupedSongs = songs.reduce((acc:any, song:any) => {
     if (!acc[song.band_name]) acc[song.band_name] = [];
     acc[song.band_name].push(song);
     return acc;
@@ -136,7 +136,7 @@ function App() {
               </thead>
               <tbody>
                 {Object.keys(groupedSongs).map((bandName) => (
-                  groupedSongs[bandName].map((song, idx) => (
+                  groupedSongs[bandName].map((song:any, idx:number) => (
                     <tr key={song.id} className="border-b border-gray-50">
                       {idx === 0 && (
                         <td className="p-4 font-bold text-blue-600 bg-blue-50/20" rowSpan={groupedSongs[bandName].length}>

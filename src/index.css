@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* 캘린더 커스텀 스타일 */
+.fc {
+  --fc-border-color: #e5e7eb;
+  --fc-today-bg-color: #fef9c3;
+}
+
+.fc-toolbar-title {
+  font-size: 1.25rem !important;
+  font-weight: bold;
+}
+
+.fc-event {
+  cursor: pointer;
+  border-radius: 4px !important;
+  padding: 2px 4px;
+  font-size: 0.85rem;
+  border: 1px solid #9ca3af !important;
+  /* background: #ffffff !important; */
+  color: #374151 !important;
+}
+
+/* 다이어리 펜으로 쓴 느낌의 폰트 효과 */
+.diary-event .fc-event-title {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: #fde047;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* FullCalendar 버튼 전체 커스텀 */
+.fc .fc-button {
+  background-color: #3b82f6 !important; /* 심플한 블루 */
+  border: none !important;
+  border-radius: 8px !important; /* 약간의 라운딩 */
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  padding: 8px 12px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  text-transform: capitalize !important; /* 첫 글자만 대문자 */
+}
+
+/* 마우스 올렸을 때 (Hover) */
+.fc .fc-button:hover {
+  background-color: #2563eb !important; /* 조금 더 진한 블루 */
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 클릭했을 때 또는 활성화된 버튼 (Active) */
+.fc .fc-button-active, 
+.fc .fc-button:active {
+  background-color: #1d4ed8 !important;
+  transform: translateY(0) !important;
+}
+
+/* 오늘(Today) 버튼 별도 스타일 (필요시) */
+.fc .fc-today-button {
+  background-color: #60a5fa !important; /* 조금 더 밝은 블루 */
+  opacity: 1 !important;
+}
+
+/* 버튼 사이의 간격 조절 */
+.fc .fc-button-group > .fc-button {
+  margin-right: 4px !important;
+}
+
+/* 비활성화된 버튼 스타일 */
+.fc .fc-button:disabled {
+  background-color: #d1d5db !important;
+  cursor: not-allowed !important;
+}
+
+
+/* 전역 폰트 적용 */
+body, button, input, select, textarea {
+  font-family: Pretendard, cursive !important;
+}
+
+/* 다이어리 내부 (메인 컨테이너) 질감 */
+.wrapper {
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+}

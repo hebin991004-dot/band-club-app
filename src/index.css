@@ -3,7 +3,7 @@
 /* 캘린더 커스텀 스타일 */
 .fc {
   --fc-border-color: #e5e7eb;
-  --fc-today-bg-color: #fef9c3;
+  --fc-today-bg-color: #fffec6;
 }
 
 .fc-toolbar-title {
@@ -21,13 +21,6 @@
   color: #374151 !important;
 }
 
-/* 다이어리 펜으로 쓴 느낌의 폰트 효과 */
-.diary-event .fc-event-title {
-  font-style: italic;
-  text-decoration: underline;
-  text-decoration-color: #fde047;
-}
-
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -39,7 +32,7 @@
 
 /* FullCalendar 버튼 전체 커스텀 */
 .fc .fc-button {
-  background-color: #3b82f6 !important; /* 심플한 블루 */
+  background-color: #cadbf7 !important; /* 심플한 블루 */
   border: none !important;
   border-radius: 8px !important; /* 약간의 라운딩 */
   font-weight: 600 !important;
@@ -52,7 +45,7 @@
 
 /* 마우스 올렸을 때 (Hover) */
 .fc .fc-button:hover {
-  background-color: #2563eb !important; /* 조금 더 진한 블루 */
+  background-color: #74afeb !important; /* 조금 더 진한 블루 */
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15) !important;
 }
@@ -60,7 +53,7 @@
 /* 클릭했을 때 또는 활성화된 버튼 (Active) */
 .fc .fc-button-active, 
 .fc .fc-button:active {
-  background-color: #1d4ed8 !important;
+  background-color: #74afeb !important;
   transform: translateY(0) !important;
 }
 
@@ -90,4 +83,23 @@ body, button, input, select, textarea {
 /* 다이어리 내부 (메인 컨테이너) 질감 */
 .wrapper {
   background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+}
+
+/* 이벤트 박스 투명화 및 테두리 제거 */
+.fc-daygrid-event {
+  background-color: transparent !important;
+  border: none !important;
+  margin: 1px 0 !important;
+}
+
+/* 마우스를 올렸을 때만 아주 살짝 배경색 표시 (선택사항) */
+.fc-daygrid-event:hover {
+  background-color: rgba(59, 130, 246, 0.05) !important;
+}
+
+/* '더 보기(+n)' 텍스트 스타일 수정 */
+.fc-daygrid-more-link {
+  font-size: 9px !important;
+  color: #94a3b8 !important;
+  font-weight: bold;
 }
